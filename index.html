@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skráningar form</title>
+  </head>
+  <body>
+    <h1>Innskráning</h1>
+    <form action="/thankyou.html" method="get">
+      <label for="name">Fullt nafn</label><br />
+      <input
+        type="name"
+        name="name"
+        id="name"
+        placeholder="Dæmi: Daníel"
+        required
+      /><br /><br />
+
+      <label for="email">Netfang</label><br />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Dæmi: daniel@example.com"
+        required
+      /><br /><br />
+
+      <label for="password">Lykilorð</label><br />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        minlength="6"
+        required
+      /><br /><br />
+
+      <label for="confirm">Staðfestu lykilorð</label><br />
+      <input
+        type="password"
+        name="confirm"
+        id="confirm"
+        minlength="6"
+        required
+      /><br /><br />
+
+      <label for="age">Aldur</label><br />
+      <!-- Ég hata að "max" styttir kassann >:( -->
+      <input
+        type="number"
+        min="0"
+        max="100"
+        name="age"
+        id="age"
+        placeholder="Dæmi: 25"
+        required
+      /><br /><br />
+
+      <label for="agree">Samþykkja skilmála</label><br />
+      <input
+        type="checkbox"
+        name="agree"
+        id="agree"
+        value="yes"
+        required
+      /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

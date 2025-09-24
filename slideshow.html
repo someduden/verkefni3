@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="is">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kynning á HTML formum</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      a {
+        width: 40px;
+        padding: 10px;
+        border: 0.5px solid lightgray;
+        border-radius: 12px;
+        text-decoration: none;
+      }
+
+      a:hover {
+        background-color: lightgray;
+        transition: 200ms ease-in-out;
+      }
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        margin: 0;
+        padding: 40px 0;
+        color: #1a1a1a;
+        min-height: 100vh;
+      }
+      .slide {
+        width: 900px;
+        max-width: 90vw;
+        min-height: 600px;
+        margin: 30px auto;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 20px 40px rgba(37, 117, 252, 0.25);
+        padding: 50px 60px;
+        box-sizing: border-box;
+        page-break-after: always;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: transform 0.3s ease;
+      }
+      .slide:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 50px rgba(37, 117, 252, 0.35);
+      }
+      h1,
+      h2 {
+        color: #2575fc;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 30px;
+        letter-spacing: 0.03em;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      h2 {
+        font-size: 2.25rem;
+      }
+      ul {
+        font-size: 1.25rem;
+        line-height: 1.7;
+        margin-left: 20px;
+        color: #444;
+      }
+      ul li {
+        margin-bottom: 12px;
+      }
+      pre {
+        background: #f5f7ff;
+        border-left: 6px solid #2575fc;
+        padding: 20px;
+        font-size: 1.15rem;
+        color: #222;
+        overflow-x: auto;
+        border-radius: 8px;
+        font-family: "Source Code Pro", monospace, monospace;
+        line-height: 1.5;
+      }
+      code {
+        background: #e7f0ff;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Source Code Pro", monospace, monospace;
+        font-weight: 600;
+        color: #2575fc;
+      }
+      table {
+        border-collapse: separate;
+        border-spacing: 0 8px;
+        width: 70%;
+        margin-top: 20px;
+        font-size: 1.15rem;
+        color: #444;
+      }
+      thead tr th {
+        text-align: left;
+        padding: 12px 15px;
+        font-weight: 600;
+        color: #2575fc;
+        border-bottom: 2px solid #2575fc;
+      }
+      tbody tr {
+        background: #f9faff;
+        transition: background 0.3s ease;
+      }
+      tbody tr:hover {
+        background: #e0e9ff;
+      }
+      tbody tr td {
+        padding: 12px 15px;
+      }
+
+      @media (max-width: 960px) {
+        .slide {
+          padding: 40px 30px;
+        }
+        table {
+          width: 100%;
+        }
+      }
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2.2rem;
+        }
+        h2 {
+          font-size: 1.8rem;
+        }
+        ul {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="slide">
+      <a href="/">Heim</a>
+      <h2>Inngangur</h2>
+      <ul>
+        <li>Hvað eru HTML form?</li>
+        <li>Hvers vegna notum við form á vefnum?</li>
+        <li>Safna upplýsingum frá notendum</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2>Uppbygging forms</h2>
+      <ul>
+        <li>Form er búið til með &lt;form&gt; tagi</li>
+        <li>Inniheldur input-reiti</li>
+        <li>Megin eiginleikar: <code>action</code> og <code>method</code></li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2><code>action</code> og <code>method</code></h2>
+      <ul>
+        <li><code>action</code>: Hvert gögnin fara (URL eða skrá)</li>
+        <li><code>method</code>: Hvernig gögnin eru send (GET eða POST)</li>
+        <li><code>GET</code>: Gögn í URL</li>
+        <li><code>POST</code>: Gögn send í bakgrunni (ekki sýnileg í URL)</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2>Algeng input-týpur</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tegund</th>
+            <th>Notkun</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>text</td>
+            <td>Texti, t.d. nafn</td>
+          </tr>
+          <tr>
+            <td>password</td>
+            <td>Lykilorð</td>
+          </tr>
+          <tr>
+            <td>email</td>
+            <td>Netfang</td>
+          </tr>
+          <tr>
+            <td>number</td>
+            <td>Tala</td>
+          </tr>
+          <tr>
+            <td>checkbox</td>
+            <td>Kross (já/nei)</td>
+          </tr>
+          <tr>
+            <td>radio</td>
+            <td>Valhnappur</td>
+          </tr>
+          <tr>
+            <td>submit</td>
+            <td>Senda form</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="slide">
+      <h2>Mismunandi eiginleikar input elements</h2>
+      <ul>
+        <li><code>name</code> – lykill fyrir gagnaflutning</li>
+        <li><code>required</code> – skyldusvæði</li>
+        <li><code>placeholder</code> – dæmi um hvað á að fylla út</li>
+        <li><code>min</code>, <code>max</code> – takmörk á tölum o.fl.</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2>Hvernig virkar sending?</h2>
+      <ul>
+        <li>Notandi fyllir út</li>
+        <li>Ýtir á "Senda" hnapp</li>
+        <li>
+          Vafri sendir gögn til <code>action</code> með aðferð
+          <code>method</code>
+        </li>
+        <li>
+          Gögn birtast í URL (<code>GET</code>) eða send í bakgrunni
+          (<code>POST</code>)
+        </li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2>Dæmi um URL með GET gögnum</h2>
+      <pre>thankyou.html?name=Jón&amp;email=jon@example.com</pre>
+    </div>
+
+    <div class="slide">
+      <h2>Lesa gögnin með JavaScript</h2>
+      <pre>
+const params = new URLSearchParams(window.location.search);
+const name = params.get('name');
+console.log(name);
+  </pre
+      >
+    </div>
+
+    <div class="slide">
+      <h2>Góð ráð</h2>
+      <ul>
+        <li>Notaðu <code>label</code> fyrir aðgengi</li>
+        <li>Veldu rétt input-type</li>
+        <li>Notaðu <code>required</code> þar sem þörf er á</li>
+        <li>Vertu varkár með lykilorð og persónuupplýsingar</li>
+        <li>Prófaðu formið vandlega</li>
+      </ul>
+    </div>
+  </body>
+</html>

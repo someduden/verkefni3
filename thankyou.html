@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="UTF-8">
+  <title>Takk fyrir skráningu</title>
+</head>
+<body>
+  <a href="/">Heim</a>
+  <h1>Takk fyrir skráningu!</h1>
+  <p><strong>Nafn:</strong> <span id="displayName"></span></p>
+  <p><strong>Netfang:</strong> <span id="displayEmail"></span></p>
+  <p><strong>Aldur:</strong> <span id="displayAge"></span></p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const name = params.get('name');
+    const email = params.get('email');
+    const age = params.get('age');
+
+    document.getElementById('displayName').textContent = name || '[ekki skráð]';
+    document.getElementById('displayEmail').textContent = email || '[ekki skráð]';
+    document.getElementById('displayAge').textContent = age || '[ekki skráð]';
+  </script>
+</body>
+</html>
